@@ -1,10 +1,11 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-/*
- * Main : entry point 
+
+/**
+ * Main : entry point determine if number is positive, negaive or zero
+ * Return 0 means success
  */
-/* main function returns 0 means success */
 int main(void)
 {
 	int n;
