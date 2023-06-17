@@ -13,9 +13,12 @@ int number;
 for (number = 48; number <= 57; number++)
 {
 
-	putchar(number);
-	putchar(',');
-	putchar(' ');
+putchar(number);
+if (number != 57)
+{
+
+putchar(',');
+putchar(' ');
 }
 putchar('\n');
 
