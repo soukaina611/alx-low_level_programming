@@ -4,7 +4,7 @@
 
 /**
  * main - print the last digit of number
- * Description:'check if last digit of number is greater than 5 less than 6 or 0'
+ * Description:check if last digit of number is greater than 5 less than 6 or 0
  * Return: Always 0 means success
 */
 int main(void)
