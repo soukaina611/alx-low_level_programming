@@ -3,8 +3,11 @@
 #include <stdio.h>
 
 /**
- * main - entry point determine if number is positive, negaive or zero
- * Return 0 means (success)
+ * main - Entry point
+ * 
+ * Description: 'determine if the number is positive, negative or zero.'
+ * 
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
