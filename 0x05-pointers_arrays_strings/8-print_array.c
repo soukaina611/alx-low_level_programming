@@ -12,13 +12,13 @@ void print_array(int *array, int number)
 {
 int index;
 
-for (index = 0 ; index < number; index++)
+for (index = 0 ; index < (number - 1); index++)
 {
-printf("%d\n", array[index]);
-if (index != (number - 1))
-{
-printf(", ");
+printf("%d, ", array[index]);
 }
+if (index == (number - 1))
+{
+printf("%d", array[number - 1]);
 }
 printf("\n");
 }
