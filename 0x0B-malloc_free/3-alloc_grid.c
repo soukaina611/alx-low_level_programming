@@ -27,7 +27,7 @@ ac[a] = malloc(sizeof(int) * width);
 
 if (ac[a] == NULL)
 {
-for (; a >= 0; a++)
+for (; a >= 0; a--)
 {
 free(ac[a]);
 }
