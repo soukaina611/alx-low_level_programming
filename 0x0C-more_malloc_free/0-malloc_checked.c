@@ -12,6 +12,7 @@ int *ar = malloc(b);
 
 if (ar == 0)
 {
-return (98);
+exit(98);
 }
 return (ar);
+}
