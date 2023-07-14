@@ -23,7 +23,7 @@ return (pt);
  *_calloc - function  allocates memory for an array
  *@nmemb: length array
  *@size: size of each element
- *Return: pointer or NULL
+ *Return: pointer or NULL if fails
 */
 
 void *_calloc(unsigned int nmemb, unsigned int size)
