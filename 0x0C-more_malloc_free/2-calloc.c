@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- *_memset - function fills memory with const byte
+ * *_memset - function fills memory with const byte
  *@string:pointer to put const
  *@b:The constant
  *@n: maximum bytes
@@ -20,7 +20,7 @@ return (pt);
 }
 
 /**
- *_calloc - function  allocates memory for an array
+ * *_calloc - function  allocates memory for an array
  *@nmemb: length array
  *@size: size of each element
  *Return: pointer or NULL if fails
