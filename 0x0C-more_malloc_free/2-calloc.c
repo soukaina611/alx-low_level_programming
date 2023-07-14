@@ -1,23 +1,5 @@
 #include "main.h"
-
-/**
- * *_memset - function fills memory with const byte
- *@string:pointer to put const
- *@b:The constant
- *@n: maximum bytes
- *Return: string
-*/
-
-char *_memset(char *string, char b, unsigned int n)
-{
-char *pt = string;
-
-while (n--)
-{
-*string++ = b;
-}
-return (pt);
-}
+#include <stdlib.h>
 
 /**
  * *_calloc - function  allocates memory for an array
@@ -29,6 +11,7 @@ return (pt);
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 void *ar;
+unsigned int x;
 
 if (size == 0 || nmemb == 0)
 {
@@ -40,7 +23,9 @@ if (ar == 0)
 {
 return (NULL);
 }
-_memset(ar, 0, sizeof(int) * nmemb);
-
+for (x = 0 ; x < (nmemb * size); x++)
+{
+ar[x] = 0;
+}
 return (ar);
 }
