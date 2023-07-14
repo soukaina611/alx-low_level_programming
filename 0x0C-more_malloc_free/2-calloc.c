@@ -10,14 +10,14 @@
 
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-void *ar;
+char *ar;
 unsigned int x;
 
 if (size == 0 || nmemb == 0)
 {
 return (NULL);
 }
-ar = malloc(sizeof(int) * nmemb);
+ar = malloc(nmemb * size);
 
 if (ar == 0)
 {
