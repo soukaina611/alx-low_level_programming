@@ -40,7 +40,7 @@ if (ar == 0)
 {
 return (NULL);
 }
-_memset(0, sizeof(int) * nmemb);
+_memset(ar, 0, sizeof(int) * nmemb);
 
 return (ar);
 }
