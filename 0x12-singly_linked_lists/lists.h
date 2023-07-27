@@ -1,5 +1,5 @@
-#ifndef lists_h
-#define lists_h
+#ifndef LISTS_H
+#define LISTS_H
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -32,7 +32,7 @@ void free_list(list_t *head);
 
 int _putchar(char c);
 
-int _strlen(char *string);
+int _strlen(char *s);
 
 void _constructor(void) __attribute__ ((constructor));
 
