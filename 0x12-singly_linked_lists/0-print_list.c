@@ -4,10 +4,8 @@
 /**
  * print_list - function that print all elem of list
  * @h: the pointer to the first node
- *
  * Return: the number of node in list
-*/
-
+ */
 size_t print_list(const list_t *h)
 {
 	size_t ind = 0;
