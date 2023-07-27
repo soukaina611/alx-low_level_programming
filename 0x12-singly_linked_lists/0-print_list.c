@@ -3,20 +3,20 @@
 
 /**
  * print_list - function that print all elem of list
- * @h: the pointer to the first node
+ * @head: the pointer to the first node
  * Return: the number of node in list
  */
-size_t print_list(const list_t *h)
+size_t print_list(const list_t *head)
 {
 	size_t ind = 0;
 
-	while (h)
+	while (head)
 	{
-		if (!h->str)
+		if (!head->str)
 			printf("[0] (nil)\n");
 		else
-			printf("[%u] %s\n", h->len, h->str);
-		h = h->next;
+			printf("[%u] %s\n", head->len, head->str);
+		head = head->next;
 		ind++;
 	}
 
