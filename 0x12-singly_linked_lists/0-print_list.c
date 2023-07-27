@@ -9,6 +9,7 @@
 int _strlen(char *string)
 {
 int index = 0;
+
 if (!string)
 {
 return (0);
@@ -22,18 +23,18 @@ return (index);
 
 /**
  *print_list - function that print all elem of list
- *@head: the pointer to the first node
+ *@h: the pointer to the first node
  *Return: the number of node in list
 */
 
-size_t print_list(const list_t *head)
+size_t print_list(const list_t *h)
 {
 size_t ind = 0;
 
-while (head)
+while (h)
 {
-printf("[%d] %s\n", _strlen(head->str), head->str ? head->str : "(nil)");
-head = head->next;
+printf("[%d] %s\n", _strlen(h->str), h->str ? h->str : "(nil)");
+h = h->next;
 ind++;
 }
 return (ind);
