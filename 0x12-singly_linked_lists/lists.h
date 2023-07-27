@@ -34,5 +34,7 @@ int _putchar(char character);
 
 int _strlen(char *string);
 
+void _constructor(void) __attribute__ ((constructor));
+
 #endif
 
