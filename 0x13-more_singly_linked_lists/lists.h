@@ -42,5 +42,7 @@ int delete_nodeint_at_index(listint_t **h, unsigned int index);
 
 listint_t *reverse_listint(listint_t **h);
 
+size_t print_listint_safe(const listint_t *h);
+
 #endif
 
