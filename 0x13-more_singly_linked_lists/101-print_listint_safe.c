@@ -67,6 +67,7 @@ if (number_of_nodes == 0)
 for (; h != NULL; number_of_nodes++)
 {
 printf("[%p]%d\n", (void *)h, h->n);
+
 h = h->next;
 }
 }
@@ -76,6 +77,7 @@ else
 for (indx = 0; indx < number_of_nodes; indx++)
 {
 printf("[%p]%d\n", (void *)h, h->n);
+
 h = h->next;
 }
 printf("-> [%p]%d\n", (void *)h, h->n);
