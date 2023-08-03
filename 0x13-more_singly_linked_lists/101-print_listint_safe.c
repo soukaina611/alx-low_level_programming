@@ -18,6 +18,7 @@ const listint_t *node1, *node2;
 if (h->next == NULL || h == NULL)
 {
 return (0);
+exit(98);
 }
 
 node1 = h->next;
