@@ -63,7 +63,7 @@ number_of_nodes = loop_listint_length(h);
 
 if (number_of_nodes == 0)
 {
-for (;h != NULL; number_of_nodes++)
+for (; h != NULL; number_of_nodes++)
 {
 printf("[%p] %d\n", (void *)h, h->n);
 
