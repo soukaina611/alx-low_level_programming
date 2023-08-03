@@ -36,7 +36,7 @@ listint_t *get_nodeint_at_index(listint_t *h, unsigned int index);
 
 int sum_listint(listint_t *h);
 
-listint_t *insert_nodeint_at_index(listint_t **h, unsigned int idx, int number);
+listint_t *insert_nodeint_at_index(listint_t **h, unsigned int idx, int numb);
 
 int delete_nodeint_at_index(listint_t **h, unsigned int index);
 

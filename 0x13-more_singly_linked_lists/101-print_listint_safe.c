@@ -82,4 +82,3 @@ printf("-> [%p] %d\n", (void *)h, h->n);
 }
 return (number_of_nodes);
 }
-

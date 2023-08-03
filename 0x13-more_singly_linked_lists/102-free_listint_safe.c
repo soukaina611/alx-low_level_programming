@@ -1,4 +1,5 @@
 #include "lists.h"
+
 /**
  *free_listint_safe - func that free safelly a list (listint_t)
  *@head: the first node in listint_t list

@@ -8,7 +8,7 @@
  *Return: Null or *pt to this new_node
  */
 
-listint_t *insert_nodeint_at_index(listint_t **h, unsigned int idx, int number)
+listint_t *insert_nodeint_at_index(listint_t **h, unsigned int idx, int numb)
 {
 listint_t *new_nodee;
 listint_t *tmp = *h;
@@ -20,7 +20,7 @@ if (!h || !new_nodee)
 {
 return (NULL);
 }
-new_nodee->n = number;
+new_nodee->n = numb;
 new_nodee->next = NULL;
 
 if (idx == 0)
