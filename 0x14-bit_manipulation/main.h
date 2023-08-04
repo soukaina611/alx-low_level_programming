@@ -11,7 +11,7 @@ void print_binary(unsigned long int number);
 
 int get_bit(unsigned long int numb, unsigned int idx);
 
-int set_bit(unsigned long int *num, unsigned int i);
+int set_bit(unsigned long int *num, unsigned int idx);
 
 int clear_bit(unsigned long int *num, unsigned int i);
 
