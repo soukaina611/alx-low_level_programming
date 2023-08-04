@@ -9,7 +9,7 @@ unsigned int binary_to_uint(const char *binary_num);
 
 void print_binary(unsigned long int number);
 
-int get_bit(unsigned long int num, unsigned int index);
+int get_bit(unsigned long int numb, unsigned int idx);
 
 int set_bit(unsigned long int *num, unsigned int i);
 
