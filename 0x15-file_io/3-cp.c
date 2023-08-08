@@ -44,7 +44,8 @@ exit(98);
 }
 while (read_file > 0)
 {
-if (write(file_dest, storage, read_file) != read_file){
+if (write(file_dest, storage, read_file) != read_file)
+{
 dprintf(STDERR_FILENO, nowrite_error, argumentv[2]);
 exit(99);
 }
