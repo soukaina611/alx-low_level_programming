@@ -29,7 +29,7 @@ if (argumentc != 3)
 dprintf(STDERR_FILENO, usage_error);
 exit(97);
 }
-file_dest = open(argumentv[2], O_CREAT | O_RDONLY | O_TRUNC, file_permissions);
+file_dest = open(argumentv[2], O_CREAT | O_WRONLY | O_TRUNC, file_permissions);
 if (file_dest == -1)
 {
 dprintf(STDERR_FILENO, nowrite_error, argumentv[2]);
@@ -40,6 +40,7 @@ read_file = read(file_source, storage, 1024);
 if (read_file == -1)
 {
 dprintf(STDERR_FILENO, noread_error, argumentv[1]);
+free(storage);
 exit(98);
 }
 while (read_file > 0)
@@ -47,6 +48,7 @@ while (read_file > 0)
 if (write(file_dest, storage, read_file) != read_file)
 {
 dprintf(STDERR_FILENO, nowrite_error, argumentv[2]);
+free(storage);
 exit(99);
 }
 }
