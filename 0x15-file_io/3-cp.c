@@ -3,7 +3,27 @@
 #define noread_error "Error: Can't read from file %s\n"
 #define nowrite_error "Error: Can't write to %s\n"
 #define file_permissions (S_IWUSR | S_IRUSR | S_IWGRP | S_IRGRP | S_IROTH)
-#define closefile_error "Error: Can't close fd %d\n"
+#define cl_err "Error: Can't close fd %d\n"
+
+void closef(int f);
+
+/**
+ *closef - funct to close open file
+ *@f:The file we want to close
+ */
+
+void closef(int f)
+{
+int cl;
+cl = close(f);
+
+if (cl == -1)
+{
+dprintf(STDERR_FILENO, cl_err, f);
+exit(100);
+}
+}
+
 
 /**
 *main - funct exec prog
@@ -13,60 +33,46 @@
 */
 int main(int argsc, char *argsv[])
 {
-int file_source;
-int file_dest;
-char *storage;
-int read_file, write_file;
+int src;
+int dest;
+char *st;
+int rd, wr;
 
-file_source = open(argsv[1], O_RDONLY);
-storage = malloc(sizeof(char) * 1024);
-if (storage == NULL)
+src = open(argsv[1], O_RDONLY);
+st = malloc(sizeof(char) * 1024);
+if (st == NULL)
 {
 dprintf(STDERR_FILENO, nowrite_error, argsv[2]);
 exit(99);
 }
-read_file = read(file_source, storage, 1024);
-
-file_dest = open(argsv[2], O_CREAT | O_WRONLY | O_TRUNC, file_permissions);
-
-do {
-
-if (read_file == -1 || file_source == -1)
-{
-dprintf(STDERR_FILENO, noread_error, argsv[1]);
-exit(98);
-}
-
+rd = read(src, st, 1024);
+dest = open(argsv[2], O_CREAT | O_WRONLY | O_TRUNC, file_permissions);
 if (argsc != 3)
 {
 dprintf(STDERR_FILENO, usage_error);
 exit(97);
 }
 
-write_file = write(file_dest, storage, read_file);
-
-if (file_dest == -1 || write_file == -1)
+do {
+if (rd == -1 || src == -1)
+{
+dprintf(STDERR_FILENO, noread_error, argsv[1]);
+free(st);
+exit(98);
+}
+wr = write(dest, st, rd);
+if (dest == -1 || wr == -1)
 {
 dprintf(STDERR_FILENO, nowrite_error, argsv[2]);
-free(storage);
-
+free(st);
 exit(99);
 }
-read_file = read(file_source, storage, 1024);
-file_dest = open(argsv[2], O_WRONLY | O_APPEND);
-} while (read_file > 0);
-free(storage);
-file_source = close(file_source);
-file_dest = close(file_dest);
-if (file_source)
-{
-dprintf(STDERR_FILENO, closefile_error, file_source);
-exit(100);
-}
-if (file_dest)
-{
-dprintf(STDERR_FILENO, closefile_error, file_source);
-exit(100);
-}
+rd = read(src, st, 1024);
+dest = open(argsv[2], O_WRONLY | O_APPEND);
+} while (rd > 0);
+free(st);
+closef(src);
+closef(dest);
+
 return (0);
 }
